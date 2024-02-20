@@ -1,0 +1,90 @@
+/* Custom styles for your app */
+body {
+    text-align: center;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    margin: 10px;
+}
+
+button {
+    margin-top: 20px;
+    min-width: 200px;
+
+}
+
+/* .soundButton, #stopButton {
+    /* padding: 10px 20px; */
+    /* margin-top: 10px; */
+    /* border-radius: 5px; */
+    /* color: white; */
+    /* font-size: 16px; Adjust font size */
+/* } */
+
+.soundButton {
+    background-color: #4CAF50; /* Green */
+    border-color: #4CAF50;
+}
+
+#stopButton {
+    background-color: #f44336; /* Red */
+    border-color: #f44336;
+}
+
+/* Adjust image and counters */
+#angeloImage {
+    max-width: 100%; /* Ensure image is responsive */
+    max-height: 60vh;
+    height: auto;
+}
+
+#platesSmashedCounter, #opasCounter, #kazooCounter, #hornCounter {
+    font-size: 24px; /* Larger font size */
+    color: #d35400; /* A distinct, bold color */
+    font-weight: bold; /* Make the text bold */
+    background-color: #ecf0f1; /* Light background for contrast */
+    border: 2px solid #bdc3c7; /* Adding a border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for better spacing */
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Centering the text */
+    width: fit-content; /* Fit to content size */
+    margin-left: auto; /* Align to center */
+    margin-right: auto; /* Align to center */
+}
+
+/* Responsive design for smaller screens (e.g., mobile devices) */
+@media (max-width: 1000px) {
+    .section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .column {
+        width: 100%; /* Make each column full width */
+        margin: 10px 0; /* Adjust margin for vertical layout */
+    }
+
+    button {
+        width: 50%; /* Make buttons full width */
+    }
+
+    #stopButton {
+        width: 50%; /* Make stop button full width */
+    }
+
+    /* Optionally, adjust the image size for smaller screens */
+    #angeloImage {
+        max-width: 100%;
+    }
+}

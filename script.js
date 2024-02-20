@@ -13,7 +13,7 @@ document.querySelectorAll('.soundButton').forEach(button => {
     button.addEventListener('click', function() {
         let soundId = this.getAttribute('data-sound');
         playSound(soundId);
-        incrementCounter(soundId);
+        // incrementCounter(soundId);
     });
 });
 
@@ -25,6 +25,7 @@ function playSound(soundId) {
         console.log("Play sound", soundId);
         let sound = document.getElementById(soundId);
         sound.play();
+        updateIndicator(soundId);
         counters[soundId]++;
         updateCounters();
         localStorage.setItem('counters', JSON.stringify(counters));
