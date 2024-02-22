@@ -22,14 +22,6 @@ button {
 
 }
 
-/* .soundButton, #stopButton {
-    /* padding: 10px 20px; */
-    /* margin-top: 10px; */
-    /* border-radius: 5px; */
-    /* color: white; */
-    /* font-size: 16px; Adjust font size */
-/* } */
-
 .soundButton {
     background-color: #4CAF50; /* Green */
     border-color: #4CAF50;
@@ -38,6 +30,19 @@ button {
 #stopButton {
     background-color: #f44336; /* Red */
     border-color: #f44336;
+}
+
+/* Custom style for the opa button */
+.soundButton[data-sound="opaSound"] {
+    background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red, violet);
+    color: white; /* Change text color if needed */
+    background-size: 300% 100%; /* Make the gradient three times as wide as the button */
+    animation: rainbowAnimation 4s linear infinite;
+}
+
+@keyframes rainbowAnimation {
+    0%, 100% { background-position: 100% 50%; }
+    50% { background-position: 0% 50%; }
 }
 
 /* Adjust image and counters */

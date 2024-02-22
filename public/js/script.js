@@ -6,6 +6,8 @@ let counters = JSON.parse(localStorage.getItem('counters')) || {
     hornSound: 0,
 };
 
+let currentSound = null; // Global variable to keep track of the currently playing sound
+
 // Update counters on the page initially
 updateCounters();
 
@@ -23,8 +25,32 @@ function playSound(soundId) {
     try {
         stopAllSounds();
         console.log("Play sound", soundId);
-        let sound = document.getElementById(soundId);
-        sound.play();
+
+        if (soundId === 'opaSound') {
+            // Define the list of opa sound files
+            const opaSoundFiles = [
+                'opa_01.mp3',
+                'opa_02.mp3',
+                'opa_03.mp3',
+                'opa_04.mp3',
+                'opa_05.mp3',
+                'opa_06.mp3',
+                'opa_07.mp3',
+                'opa_08.mp3',
+                'opa_09.mp3',
+                'opa_10.mp3',
+            ];
+
+            // Randomly select from the opaSoundFiles array
+            let randomIndex = Math.floor(Math.random() * opaSoundFiles.length);
+            let opaFileName = opaSoundFiles[randomIndex];
+            console.log("Playing opa sound file:", opaFileName); // Log the chosen file name
+            currentSound  = new Audio(`public/audio/${opaFileName}`);
+        } else {
+            currentSound = document.getElementById(soundId);
+        }
+
+        currentSound .play();
         updateIndicator(soundId);
         counters[soundId]++;
         updateCounters();
@@ -37,10 +63,10 @@ function playSound(soundId) {
 
 function stopAllSounds() {
     console.log("Stop all sounds");
-    document.querySelectorAll('audio').forEach(audio => {
-        audio.pause();
-        audio.currentTime = 0;
-    });
+    if (currentSound) {
+        currentSound.pause();
+        currentSound.currentTime = 0;
+    }
     updateIndicator();
 }
 
