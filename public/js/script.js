@@ -39,6 +39,7 @@ function playSound(soundId) {
                 'opa_bd.m4a',
                 'opa_mg.mp4',
                 'opa_np.m4a',
+                'opa_vs.mp4',
             ];
 
             // Randomly select from the opaSoundFiles array
